@@ -13,7 +13,7 @@
   --r: 8px;
   --pressScale: 0.985;
   --emojiScale: 1.08;
-  --page-safe-top: calc(env(safe-area-inset-top) + 12px);
+  --page-safe-top: calc(var(--tg-safe-area-inset-top, env(safe-area-inset-top)) + 12px);
 }
 
 * {

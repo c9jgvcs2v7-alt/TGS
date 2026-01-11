@@ -16,7 +16,7 @@
   --emojiScale: 1.08;
   --pressScale: 0.985;
   --navH: 60px;
-  --page-safe-top: calc(env(safe-area-inset-top) + 12px);
+  --page-safe-top: calc(var(--tg-safe-area-inset-top, env(safe-area-inset-top)) + 12px);
 }
 
 * {

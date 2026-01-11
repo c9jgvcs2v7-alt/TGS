@@ -11,6 +11,21 @@
     return tg && tg.initDataUnsafe && tg.initDataUnsafe.user ? tg.initDataUnsafe.user : null;
   }
 
+  function applyTelegramInsets() {
+    const tg = global.Telegram && global.Telegram.WebApp ? global.Telegram.WebApp : null;
+    if (!tg || !document || !document.documentElement) return;
+    const inset = tg.safeAreaInset || tg.contentSafeAreaInset || null;
+    if (!inset) return;
+
+    const root = document.documentElement;
+    if (typeof inset.top === "number") {
+      root.style.setProperty("--tg-safe-area-inset-top", `${inset.top}px`);
+    }
+    if (typeof inset.bottom === "number") {
+      root.style.setProperty("--tg-safe-area-inset-bottom", `${inset.bottom}px`);
+    }
+  }
+
   function getUserId() {
     const tgUser = getTelegramUser();
     if (tgUser && tgUser.id != null) return String(tgUser.id);
@@ -118,6 +133,7 @@
   App.setUserId = App.setUserId || setUserId;
   App.getApiBase = App.getApiBase || getApiBase;
   App.getTelegramUser = App.getTelegramUser || getTelegramUser;
+  App.applyTelegramInsets = App.applyTelegramInsets || applyTelegramInsets;
   App.ensureUserRegistered = App.ensureUserRegistered || ensureUserRegistered;
   App.readMyEmojis = App.readMyEmojis || readMyEmojis;
   App.writeMyEmojis = App.writeMyEmojis || writeMyEmojis;
@@ -126,5 +142,10 @@
 
   global.App = App;
 
+  applyTelegramInsets();
+  try {
+    const tg = global.Telegram && global.Telegram.WebApp ? global.Telegram.WebApp : null;
+    tg?.onEvent?.("viewportChanged", applyTelegramInsets);
+  } catch (_) {}
   ensureUserRegistered();
 })(window);
