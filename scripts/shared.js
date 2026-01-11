@@ -26,7 +26,7 @@
     }
 
     const platform = tg.platform || "";
-    const baseTop = platform === "ios" ? 44 : platform === "android" ? 24 : 0;
+    const baseTop = platform === "ios" ? 88 : platform === "android" ? 56 : 0;
     const safeTop = typeof inset.top === "number" ? inset.top : 0;
     const extraTop = Math.max(baseTop - safeTop, 0);
     root.style.setProperty("--tg-header-offset", `${extraTop}px`);
