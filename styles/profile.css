@@ -13,6 +13,7 @@
   --r: 8px;
   --pressScale: 0.985;
   --navH: 60px;
+  --page-safe-top: calc(env(safe-area-inset-top) + 12px);
 }
 
 * {
@@ -38,7 +39,7 @@ body {
 }
 
 .main {
-  padding: calc(18px + env(safe-area-inset-top)) 18px calc(var(--navH) + 26px);
+  padding: calc(18px + var(--page-safe-top)) 18px calc(var(--navH) + 26px);
   animation: fadeUp 420ms ease;
 }
 

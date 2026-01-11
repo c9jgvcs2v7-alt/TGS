@@ -14,6 +14,7 @@
   --emojiScale: 1.08;
   --pressScale: 0.985;
   --settingsH: clamp(240px, 52vh, 420px);
+  --page-safe-top: calc(env(safe-area-inset-top) + 12px);
 }
 
 * {
@@ -45,7 +46,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: calc(14px + env(safe-area-inset-top)) 16px 10px;
+  padding: calc(14px + var(--page-safe-top)) 16px 10px;
   gap: 10px;
 }
 
