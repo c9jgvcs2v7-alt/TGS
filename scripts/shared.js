@@ -24,6 +24,13 @@
     if (typeof inset.bottom === "number") {
       root.style.setProperty("--tg-safe-area-inset-bottom", `${inset.bottom}px`);
     }
+
+    const platform = tg.platform || "";
+    const baseTop = platform === "ios" ? 44 : platform === "android" ? 24 : 0;
+    const safeTop = typeof inset.top === "number" ? inset.top : 0;
+    const extraTop = Math.max(baseTop - safeTop, 0);
+    root.style.setProperty("--tg-header-offset", `${extraTop}px`);
+    root.classList.add("tg-app");
   }
 
   function getUserId() {

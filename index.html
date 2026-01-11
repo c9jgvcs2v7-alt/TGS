@@ -28,7 +28,7 @@
         background: var(--bg);
         color: var(--text);
         font-family: 'Urbanist', 'Segoe UI', system-ui, sans-serif;
-        padding-top: env(safe-area-inset-top);
+        padding-top: calc(var(--tg-safe-area-inset-top, env(safe-area-inset-top)) + var(--tg-header-offset, 0px) + 12px);
       }
 
       .card {
@@ -164,5 +164,6 @@
       <p>Нажмите, чтобы открыть каталог и начать.</p>
       <a class="btn" href="./pages/catalog.html">Открыть каталог</a>
     </div>
+    <script src="./scripts/shared.js"></script>
   </body>
 </html>
