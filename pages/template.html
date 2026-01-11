@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Шаблон</title>
+    <link rel="stylesheet" href="../styles/template.css" />
+  </head>
+
+  <body>
+    <div class="screen">
+      <header class="topbar">
+        <a class="back" href="./catalog.html" id="backBtn">
+          <svg viewBox="0 0 24 24">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+          Назад
+        </a>
+        <div style="width: 36px"></div>
+      </header>
+
+      <main class="content">
+        <div class="previewWrap">
+          <div class="previewCard">
+            <div class="previewStage">
+              <div class="lottie" id="lottie"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <div class="factLabel">Цвета</div>
+            <div class="factValue" id="colors">—</div>
+          </div>
+          <div class="fact">
+            <div class="factLabel">Логотип</div>
+            <div class="factValue" id="logo">—</div>
+          </div>
+          <div class="fact">
+            <div class="factLabel">Градиенты</div>
+            <div class="factValue" id="gradients">—</div>
+          </div>
+        </div>
+      </main>
+
+      <div class="cta">
+        <button class="btn" id="configureBtn">Настроить</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+    <script src="../scripts/template.js"></script>
+  </body>
+</html>

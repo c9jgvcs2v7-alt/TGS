@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Каталог шаблонов</title>
+    <link rel="stylesheet" href="../styles/catalog.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <main class="main">
+        <div class="topbar">
+          <div></div>
+          <div class="topbar-right"></div>
+        </div>
+
+        <div class="banner" aria-label="Баннер">
+          <div class="bannerPlaceholder">Баннер</div>
+        </div>
+
+        <div class="modeBar">
+          <div class="modeTabs" role="tablist" aria-label="Режим каталога">
+            <button class="modeTab" role="tab" aria-selected="true" data-mode="all">Все</button>
+            <button class="modeTab" role="tab" aria-selected="false" data-mode="collections">Коллекции</button>
+          </div>
+          <div class="countPill" id="status">…</div>
+        </div>
+
+        <div class="chips" id="chips" aria-label="Фильтры каталога"></div>
+
+        <div class="collectionHeader" id="collectionHeader" style="display: none">
+          <button class="backBtn" type="button" id="collectionBackBtn" aria-label="К списку коллекций">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+            Коллекции
+          </button>
+          <div class="collectionTitle" id="collectionTitle">—</div>
+        </div>
+
+        <div class="grid" id="grid" aria-label="Сетка шаблонов"></div>
+        <div class="collections" id="collections" aria-label="Список коллекций"></div>
+
+        <div class="error" id="error"></div>
+      </main>
+
+      <nav class="bottomNav" aria-label="Нижняя навигация">
+        <button class="navItem" aria-current="page" type="button" data-route="catalog" aria-label="Каталог">
+          <svg class="navIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="2.2"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="2.2"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="2.2"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="2.2"></rect>
+          </svg>
+        </button>
+
+        <button class="navItem" type="button" data-route="my" aria-label="Мои эмодзи">
+          <svg class="navIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="navItem" type="button" data-route="profile" aria-label="Профиль">
+          <svg class="navIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M6 20c1.6-3 10.4-3 12 0"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="../scripts/shared.js"></script>
+    <script src="../scripts/catalog.js"></script>
+  </body>
+</html>

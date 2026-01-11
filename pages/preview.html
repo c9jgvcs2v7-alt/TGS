@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Итог</title>
+    <link rel="stylesheet" href="../styles/preview.css" />
+  </head>
+
+  <body>
+    <div class="screen">
+      <header class="topbar">
+        <button class="back" type="button" id="backBtn">
+          <svg viewBox="0 0 24 24">
+            <path d="M15 18l-6-6 6-6"></path>
+          </svg>
+          Назад
+        </button>
+        <div class="title">Итог</div>
+        <div style="width: 72px"></div>
+      </header>
+
+      <main class="content">
+        <div class="previewWrap">
+          <div class="previewCard">
+            <div class="previewStage">
+              <div class="lottie" id="lottie"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="cta">
+        <button class="btn" id="saveBtn">Сохранить</button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="../scripts/shared.js"></script>
+    <script src="../scripts/preview.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "p1",
+      "lottiePath": "../assets/lottie/output_1.json",
+      "hasLogo": false,
+      "colorsCount": 3,
+      "collection": "Базовые",
+      "hasGradients": false
+    },
+    {
+      "id": "p2",
+      "lottiePath": "../assets/lottie/output_2.json",
+      "hasLogo": false,
+      "colorsCount": 6,
+      "collection": "Базовые",
+      "hasGradients": true
+    },
+    {
+      "id": "p3",
+      "lottiePath": "../assets/lottie/output_3.json",
+      "hasLogo": true,
+      "colorsCount": 6,
+      "collection": "Бренд",
+      "hasGradients": true
+    }
+  ]
+}

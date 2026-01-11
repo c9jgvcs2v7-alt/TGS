@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Профиль</title>
+    <link rel="stylesheet" href="../styles/profile.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <main class="main">
+        <div class="topbar">
+          <h1 class="title">Профиль</h1>
+        </div>
+
+        <div class="card">
+          <h2 class="cardTitle">User ID</h2>
+          <p class="cardText">В Telegram Mini App используется Telegram user id. В обычном браузере можно указать любой номер.</p>
+          <div class="field">
+            <input class="input" id="userIdInput" type="text" inputmode="numeric" placeholder="Например, 0" />
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="cardTitle">API URL</h2>
+          <p class="cardText">Укажите адрес сервера (например, https://xxxx.ngrok-free.app).</p>
+          <div class="field">
+            <input class="input" id="apiBaseInput" type="text" inputmode="url" placeholder="https://example.com" />
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="cardTitle">Раздел в разработке</h2>
+          <p class="cardText">Здесь позже появятся данные пользователя, история покупок, поддержка и настройки.</p>
+        </div>
+      </main>
+
+      <nav class="bottomNav" aria-label="Нижняя навигация">
+        <button class="navItem" type="button" data-route="catalog" aria-label="Каталог">
+          <svg class="navIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="2.2"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="2.2"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="2.2"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="2.2"></rect>
+          </svg>
+        </button>
+
+        <button class="navItem" type="button" data-route="my" aria-label="Мои эмодзи">
+          <svg class="navIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+
+        <button class="navItem" aria-current="page" type="button" data-route="profile" aria-label="Профиль">
+          <svg class="navIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M6 20c1.6-3 10.4-3 12 0"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <script src="../scripts/shared.js"></script>
+    <script src="../scripts/profile.js"></script>
+  </body>
+</html>

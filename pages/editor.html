@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Редактор</title>
+    <link rel="stylesheet" href="../styles/editor.css" />
+  </head>
+
+  <body>
+    <div class="editor">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="top-left">
+          <button class="iconBtn" id="backBtn" aria-label="Назад">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 18l-6-6 6-6"></path>
+            </svg>
+            Назад
+          </button>
+        </div>
+
+        <div class="top-right">
+          <button class="iconBtn" id="undoBtn" aria-label="Undo">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 14l-4-4 4-4"></path>
+              <path d="M5 10h8a4 4 0 1 1 0 8"></path>
+            </svg>
+          </button>
+
+          <button class="iconBtn" id="redoBtn" aria-label="Redo">
+            <svg viewBox="0 0 24 24">
+              <path d="M15 14l4-4-4-4"></path>
+              <path d="M19 10h-8a4 4 0 1 0 0 8"></path>
+            </svg>
+          </button>
+          <button class="iconBtn" id="doneBtn" aria-label="Готово">Готово</button>
+        </div>
+      </header>
+
+      <!-- Preview -->
+      <main class="preview">
+        <div class="previewCard">
+          <div class="previewStage">
+            <div class="lottie" id="lottieContainer"></div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Settings -->
+      <section class="settings" id="settingsPanel">
+        <div class="settingsHeader" id="settingsHeader" aria-label="Панель настроек">
+          <div class="settingsHandle" id="settingsHandle" role="button" aria-label="Изменить высоту панели"></div>
+          <div class="tabs">
+            <button class="tab" aria-selected="true" data-tab="colors">Цвета</button>
+            <button class="tab" data-tab="gradients">Градиенты</button>
+            <button class="tab" data-tab="mix">Ц+Г</button>
+            <button class="tab" data-tab="logo">Логотип</button>
+          </div>
+        </div>
+
+        <div class="panel is-solid" id="colorsPanel">
+          <div class="panelHeader">
+            <div class="panelTitle">
+              <span>Цвета</span>
+              <span class="panelMeta" id="colorsMeta">—</span>
+            </div>
+            <div class="panelActions">
+              <label class="toggle">
+                <span class="toggleLabel">Группировка</span>
+                <input class="toggleInput" id="groupToggle" type="checkbox" />
+                <span class="toggleTrack" aria-hidden="true">
+                  <span class="toggleThumb"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="colorsList" id="colorsList">
+            <div class="panelNote">Загрузите шаблон, чтобы увидеть список цветов.</div>
+          </div>
+        </div>
+        <div class="panel" id="logoPanel" style="display: none">Панель логотипа будет добавлена позже</div>
+        <div class="panel is-solid" id="gradientsPanel" style="display: none">
+          <div class="panelHeader">
+            <div class="panelTitle">
+              <span>Градиенты</span>
+              <span class="panelMeta" id="gradientsMeta">—</span>
+            </div>
+          </div>
+          <div class="gradientsList" id="gradientsList">
+            <div class="panelNote">Загрузите шаблон, чтобы увидеть список градиентов.</div>
+          </div>
+        </div>
+        <div class="panel is-solid" id="mixPanel" style="display: none">
+          <div class="panelHeader">
+            <div class="panelTitle">
+              <span>Цвета + градиенты</span>
+              <span class="panelMeta" id="mixMeta">—</span>
+            </div>
+            <div class="panelActions">
+              <label class="toggle">
+                <span class="toggleLabel">Группировка</span>
+                <input class="toggleInput" id="mixGroupToggle" type="checkbox" />
+                <span class="toggleTrack" aria-hidden="true">
+                  <span class="toggleThumb"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="mixList" id="mixList">
+            <div class="panelNote">Загрузите шаблон, чтобы увидеть список.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="colorPicker is-hidden" id="colorPicker" aria-hidden="true">
+      <div class="cpCaret" aria-hidden="true"></div>
+      <div class="cpBody">
+        <div class="cpSV" id="cpSV" role="slider" aria-label="Выбор цвета">
+          <div class="cpSVCursor" id="cpSVCursor" aria-hidden="true"></div>
+        </div>
+        <div class="cpHue" id="cpHue" role="slider" aria-label="Тон">
+          <div class="cpHueCursor" id="cpHueCursor" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="cpFooter">
+        <input class="cpHex" id="cpHex" type="text" value="#FFFFFF" inputmode="text" maxlength="7" spellcheck="false" />
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+    <script src="../scripts/editor.js"></script>
+  </body>
+</html>
